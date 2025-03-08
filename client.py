@@ -1,7 +1,13 @@
 import hashlib
+import socket
+
 
 serv_ip = "0.0.0.0"
 serv_port = "8000"
+
+socket_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+socket_client.bind("127.0.0.1",12345)
+
 
 
 def calculer_hash_fichier(path, algo="sha256", buffer_size=65536):  #path + algo en sha256 et un buffer pour eviter la congestion de gros fichier
